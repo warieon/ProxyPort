@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 import httpx
 from Utils.Auth.hpi_auth import authenticate
+from decouple import config
 
 Patient = Blueprint('Patient', __name__)
 
@@ -18,7 +19,7 @@ def patient():
         return 'Error: userId not provided', 400
     
     access_token = authenticate(application=appName)
-    api_key = ''
+    api_key = config('API_KEY')
 
     headers = {
         'Authorization': f'Bearer {access_token}',

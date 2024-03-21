@@ -1,4 +1,5 @@
 import httpx
+from decouple import config
 
 def authenticate(application):
     """
@@ -11,8 +12,8 @@ def authenticate(application):
     if application == 'RCP':
         print('Source = RCP')
         try:
-            client_id = ''
-            client_secret = ''
+            client_id = config('CLIENT_ID')
+            client_secret = config('CLIENT_SECRET')
             print('Requesting OAuth Token with RCP Credentials')
             auth_token = get_auth_token(client_id, client_secret, hpi_auth_url)
             return auth_token
