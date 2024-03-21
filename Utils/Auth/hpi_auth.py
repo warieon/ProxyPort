@@ -11,8 +11,8 @@ def authenticate(application):
     if application == 'RCP':
         print('Source = RCP')
         try:
-            client_id = '2h9emq7d1aeoaqdigbikeljkbq'
-            client_secret = '3tmrgqd0e04c3haddspbcri5elkqhnqaomb1lusdfdccvl4qveo'
+            client_id = ''
+            client_secret = ''
             print('Requesting OAuth Token with RCP Credentials')
             auth_token = get_auth_token(client_id, client_secret, hpi_auth_url)
             return auth_token

@@ -18,7 +18,7 @@ def patient():
         return 'Error: userId not provided', 400
     
     access_token = authenticate(application=appName)
-    api_key = 'KSLSzh5s9P25wL5O1qZ8w90zrbraocFX8XTBL6F9'
+    api_key = ''
 
     headers = {
         'Authorization': f'Bearer {access_token}',
